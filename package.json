@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cmmovius/alt-getting-started#readme",
   "dependencies": {
-    "alt": "^0.18.4"
+    "alt": "^0.18.4",
+    "react": "^15.1.0"
   }
 }
