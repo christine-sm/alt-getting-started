@@ -2,9 +2,10 @@
   "name": "alt-getting-started",
   "version": "1.0.0",
   "description": "Getting Started with Alt",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify -t [reactify --es6] src/App.jsx > build/app.js",
+    "start": "npm run build && open 'index.html' "
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "dependencies": {
     "alt": "^0.18.4",
     "react": "^15.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "reactify": "^1.1.1"
   }
 }
