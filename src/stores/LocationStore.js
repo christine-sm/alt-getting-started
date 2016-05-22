@@ -1,6 +1,7 @@
 var alt = require('../alt');
 var LocationActions = require('../actions/LocationActions');
 var LocationSource = require('../sources/LocationSource');
+var FavoritesStore = require('../stores/FavoritesStore');
 
 class LocationStore {
   constructor() {
