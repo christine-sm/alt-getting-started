@@ -7,6 +7,7 @@ var Locations = React.createClass({
   },
   componentDidMount() {
     LocationStore.listen(this.onChange);
+    LocationActions.fetchLocations();
   },
   componentWillUnmount() {
     LocationStore.unlisten(this.onChange);
@@ -16,6 +17,20 @@ var Locations = React.createClass({
   },
 
   render() {
+    if (this.state.errorMessage) {
+      return (
+        <div>Something is wrong.</div>
+      );
+    }
+
+    if (!this.state.locations.length) {
+      return (
+        <div>
+          <img src='/default.gif' />
+        </div>
+      );
+    }
+
     return (
       <div>
         <ul>
