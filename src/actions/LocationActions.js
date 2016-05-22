@@ -13,9 +13,9 @@ class LocationActions {
     this.dispatch(errorMessage);
   }
 
-  // favoriteLocation(location) {
-  //   this.dispatch(location);
-  // }
+  favoriteLocation(location) {
+    this.dispatch(location);
+  }
 }
 
 module.exports = alt.createActions(LocationActions);
