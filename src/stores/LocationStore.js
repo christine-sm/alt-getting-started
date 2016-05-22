@@ -1,5 +1,6 @@
 var alt = require('../alt');
 var LocationActions = require('../actions/LocationActions');
+var LocationSource = require('../sources/LocationSource');
 
 class LocationStore {
   constructor() {
@@ -10,6 +11,12 @@ class LocationStore {
       handleFetchLocations: LocationActions.FETCH_LOCATIONS,
       handleLocationsFailed: LocationActions.LOCATIONS_FAILED
     });
+
+    this.exportPublicMethods({
+      getLocation: this.getLocation
+    });
+
+    this.exportAsync(LocationSource);
   }
 
   handleUpdateLocations(locations) {
@@ -23,6 +30,17 @@ class LocationStore {
 
   handleLocationsFailed(errorMessage) {
     this.errorMessage = errorMessage;
+  }
+
+  getLocation(id) {
+    var { locations } = this.getState();
+    for (var i = 0; i < locations.length; i += 1) {
+      if (locations[i].id === id) {
+        return locations[i];
+      }
+    }
+
+    return null;
   }
 }
 

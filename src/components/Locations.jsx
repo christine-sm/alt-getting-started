@@ -1,5 +1,7 @@
 var React = require('react');
+var AltContainer = require('alt/AltContainer');
 var LocationStore = require('../stores/LocationStore');
+var LocationActions = require('../actions/LocationActions');
 
 var Locations = React.createClass({
   getInitialState() {
@@ -26,7 +28,7 @@ var Locations = React.createClass({
     if (!this.state.locations.length) {
       return (
         <div>
-          <img src='/default.gif' />
+          <img src='default.gif' />
         </div>
       );
     }

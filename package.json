@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/cmmovius/alt-getting-started#readme",
   "dependencies": {
-    "alt": "^0.18.4",
-    "react": "^15.1.0"
+    "alt": "^0.16.0",
+    "react": "^0.12.2"
   },
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "reactify": "^1.1.1"
+    "browserify": "^8.0.3",
+    "reactify": "^0.17.1"
   }
 }
